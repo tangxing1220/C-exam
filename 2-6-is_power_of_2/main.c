@@ -1,54 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/13 17:47:55 by xtang             #+#    #+#             */
+/*   Updated: 2019/11/13 18:03:22 by xtang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include "libft.h"
 
-int is_power_of_2(unsigned int n);
+int	is_power_of_2(unsigned int n);
 
-int main(void)
+int	main(int argc, char **argv)
 {
-    unsigned int n;
-
-    n = 0;
-    if(is_power_of_2(n))
-        printf("n = 0 is True 1\n");
-    else 
-        printf("n = 0 is False 0\n");
-
-    n = 1;
-    if(is_power_of_2(n))
-        printf("n = 1 is True 1\n");
-    else 
-        printf("n = 1 is False 0\n");
-
-    n = 2;
-    if(is_power_of_2(n))
-        printf("n = 2 is True 1\n");
-    else 
-        printf("n = 2 is False 0\n");
-
-    n = 3;
-    if(is_power_of_2(n))
-        printf("n = 3 is True 1\n");
-    else 
-        printf("n = 3 is False 0\n");
-
-    n = 7;
-    if(is_power_of_2(n))
-        printf("n = 7 is True 1\n");
-    else 
-        printf("n = 7 is False 0\n");
-
-    n = 8;
-    if(is_power_of_2(n))
-        printf("n = 8 is True 1\n");
-    else 
-        printf("n = 8 is False 0\n"); 
-
-    n = 9;
-    if(is_power_of_2(n))
-        printf("n = 9 is True 1\n");
-    else 
-        printf("n = 9 is False 0\n"); 
-
-    return (0);  
-
-
+	if (argc == 2)
+	{
+		printf("%s is power of  2 ? ", argv[1]);
+		is_power_of_2(atoi(argv[1])) ? printf("Yes\n") : printf("No\n");
+	}
+	return (0);
 }

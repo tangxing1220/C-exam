@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   maff_revalpha.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/18 13:30:52 by xtang             #+#    #+#             */
+/*   Updated: 2019/11/18 13:37:54 by xtang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int main(void)
+int	main(void)
 {
-    char odd;
-    char even;
+	char odd;
+	char even;
 
-    odd = 'z';
-    even = 'Y';
-    while( odd >= 'a')
-    {
-        write(1, &odd, 1);
-        write(1, &even, 1);
-        odd = odd - 2;
-        even = even - 2;
-    }
-    write(1, "\n", 1);
-    return (0);
+	odd = 'z';
+	even = 'Y';
+	while (odd >= 'a')
+	{
+		write(1, &odd, 1);
+		write(1, &even, 1);
+		odd = odd - 2;
+		even = even - 2;
+	}
+	write(1, "\n", 1);
+	return (0);
 }

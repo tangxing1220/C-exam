@@ -1,18 +1,36 @@
-int is_power_of_2(unsigned int n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/13 17:40:32 by xtang             #+#    #+#             */
+/*   Updated: 2019/11/13 18:16:00 by xtang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	is_power_of_2(unsigned int n)
+
+/*
+** {
+**	unsigned int m;
+**
+**	if (n == 0)
+**		return (0);
+**	if (n == 1)
+**		return (1);
+**	m = 1;
+**	while (m <= n)
+**	{
+**		m = m * 2;
+**		if (m == n)
+**			return (1);
+**	}
+**	return (0);
+** }
+*/
+
 {
-    unsigned int result;
-
-    result = 1;
-    if( n == 0)
-        return (0);
-    if (n == 1)
-        return (1);
-    while (result < n)
-    {   
-        result = result * 2;
-        if(result == n)
-            return (1);     
-    }
-    return (0);
+	return (n > 0 && !(n & (n - 1)));
 }
-

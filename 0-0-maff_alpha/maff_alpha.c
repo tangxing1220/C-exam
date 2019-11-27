@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   maff_alpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/18 12:16:49 by xtang             #+#    #+#             */
+/*   Updated: 2019/11/18 12:24:02 by xtang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int main(void)
+int	main(void)
 {
-	char i;
-	char j;
-	
-	i = 'a';
-	j = 'B';
-	while (i <= 'z' )
+	int odd;
+	int even;
+
+	odd = 'a';
+	even = 'B';
+	while (odd <= 'z')
 	{
-		write(1, &i, 1);
-		write(1, &j, 1);
-		j=j+2;
-		i=i+2;
+		write(1, &odd, 1);
+		write(1, &even, 1);
+		odd = odd + 2;
+		even = even + 2;
 	}
-	write(1,"\n", 1);
+	write(1, "\n", 1);
 	return (0);
 }

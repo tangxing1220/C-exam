@@ -1,26 +1,27 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/18 15:35:54 by xtang             #+#    #+#             */
+/*   Updated: 2019/11/18 15:50:11 by xtang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strcpy(char *dest, const char *src);
+#include "libft.h"
 
-int ft_strlen(char *str)
+char *ft_strcpy(char *s1, char *s2);
+
+int	main(int argc, char **argv)
 {
-    int i;
+	char *dst;
 
-    i = 0;
-    while(str[i] != '\0')
-        i++;
-    return (i);    
-}
-
-int main (void)
-{
-    int  len;
-
-    char *src = "This is the first exam in 42.";
-    char *dest = "I believe I can fly. This is a piece of cake.";
-    dest = ft_strcpy(dest, src);   
-    len = ft_strlen(dest);
-    write(1, dest, len);
-    return (0);
-
+	if (argc == 3)
+	{
+		dst = ft_strcpy(argv[1], argv[2]);
+	}
+	ft_putstr(dst);
+	return (0);
 }
