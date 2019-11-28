@@ -40,6 +40,16 @@ static char	*ft_rmdoub(char *str)
 	return (str);
 }
 
+int ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i] != '\0')
+		i++;
+	return (i);
+}
+
 int		main(int argc, char **argv)
 {
 	int i;
@@ -51,9 +61,9 @@ int		main(int argc, char **argv)
 		i = 0;
 		j = 0;
 		argv[1] = ft_rmdoub(argv[1]);
-		while (argv[1][i] != '\0')
-			i++;
-		write(1, &argv[1], i);
+		argv[2] = ft_rmdoub(argv[2]);
+		write(1, &argv[1][0], ft_strlen(argv[1]));
+		
 		i = 0;
 		while (argv[2][i] != '\0')
 		{
