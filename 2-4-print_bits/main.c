@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 17:40:32 by xtang             #+#    #+#             */
-/*   Updated: 2019/12/16 17:38:31 by xtang            ###   ########.fr       */
+/*   Created: 2019/12/16 13:36:53 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 13:50:54 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
-{
-	unsigned int m;
+#include <unistd.h>
 
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	m = 1;
-	while (m <= n)
-	{
-		m = m * 2;
-		if (m == n)
-			return (1);
-	}
+void	ft_print_bits(unsigned char octet);
+
+int		main(void)
+{
+	ft_print_bits(42);
+	write(1, "\n", 1);
+	ft_print_bits('*');
+	write(1, "\n", 1);
 	return (0);
- }
-//{
-//	return (n > 0 && !(n & (n - 1)));
-//}
+}

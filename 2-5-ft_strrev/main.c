@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 17:40:32 by xtang             #+#    #+#             */
-/*   Updated: 2019/12/16 17:38:31 by xtang            ###   ########.fr       */
+/*   Created: 2019/12/16 16:18:30 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 16:41:49 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
-{
-	unsigned int m;
+#include <unistd.h>
 
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	m = 1;
-	while (m <= n)
+int		ft_strlen(char *str);
+char	*ft_strrev(char *str);
+
+int		main(int argc, char **argv)
+{
+	int		len;
+	char	*strrev;
+
+	if (argc == 2)
 	{
-		m = m * 2;
-		if (m == n)
-			return (1);
+		len = ft_strlen(argv[1]);
+		write(1, &argv[1][0], len);
+		write(1, "\n", 1);
+		strrev = ft_strrev(argv[1]);
+		write(1, &strrev[0], len);
+		write(1, "\n", 1);
 	}
+	else
+		write(1, "\n", 1);
 	return (0);
- }
-//{
-//	return (n > 0 && !(n & (n - 1)));
-//}
+}

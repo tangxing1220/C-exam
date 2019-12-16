@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 17:40:32 by xtang             #+#    #+#             */
-/*   Updated: 2019/12/16 17:38:31 by xtang            ###   ########.fr       */
+/*   Created: 2019/12/16 15:25:35 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 15:52:42 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
-{
-	unsigned int m;
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	m = 1;
-	while (m <= n)
+int	ft_strcmp(char *s1, char *s);
+
+int	main(int argc, char **argv)
+{
+	int result;
+
+	if (argc == 3)
 	{
-		m = m * 2;
-		if (m == n)
-			return (1);
+		result = ft_strcmp(argv[1], argv[2]);
+		printf("ft_strcmp():%d\n", result);
+		result = strcmp(argv[1], argv[2]);
+		printf("strcmp():%d\n", result);
 	}
+	write(1, "\n", 1);
 	return (0);
- }
-//{
-//	return (n > 0 && !(n & (n - 1)));
-//}
+}

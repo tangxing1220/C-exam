@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alpha_mirror.c                                     :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/28 11:38:18 by xtang             #+#    #+#             */
-/*   Updated: 2019/11/28 11:41:13 by xtang            ###   ########.fr       */
+/*   Created: 2019/12/16 11:29:47 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 12:19:29 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "do_op.h"
 
 int	main(int argc, char **argv)
 {
-	int i;
+	int		num1;
+	int		num2;
+	int		result;
+	char	operator;
 
-	i = 0;
-	if (argc == 2)
+	if (argc == 4)
 	{
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				argv[1][i] = 'z' - (argv[1][i] - 'a');
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				argv[1][i] = 'Z' - (argv[1][i] - 'A');
-			write(1, &argv[1][i], 1);
-			i++;
-		}
+		operator = argv[2][0];
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[3]);
+		if (operator == '+')
+			result = num1 + num2;
+		else if (operator == '-')
+			result = num1 - num2;
+		else if (operator == '*')
+			result = num1 * num2;
+		else if (operator == '/')
+			result = num1 / num2;
+		else
+			result = num1 % num2;
+		printf("%d\n", result);
 	}
-	write(1, "\n", 1);
+	else
+		write(1, "\n", 1);
 	return (0);
 }
