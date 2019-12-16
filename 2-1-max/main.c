@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 17:40:32 by xtang             #+#    #+#             */
-/*   Updated: 2019/12/16 17:38:31 by xtang            ###   ########.fr       */
+/*   Created: 2019/11/28 13:07:09 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 11:07:37 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
-{
-	unsigned int m;
+#include <stdio.h>
 
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	m = 1;
-	while (m <= n)
-	{
-		m = m * 2;
-		if (m == n)
-			return (1);
-	}
+int	max(int *tab, unsigned int len);
+
+int			main(void)
+{
+	int	array[10] = {9999, 34, -21, 0, 0, 24, 34, 65, -90, 10};
+	int	i;
+	int	result;
+
+	i = 0;
+	result = max(array, 10);
+	printf("%d\n", result);
 	return (0);
- }
-//{
-//	return (n > 0 && !(n & (n - 1)));
-//}
+}

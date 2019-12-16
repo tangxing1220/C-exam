@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 17:40:32 by xtang             #+#    #+#             */
-/*   Updated: 2019/12/16 17:38:31 by xtang            ###   ########.fr       */
+/*   Created: 2019/12/16 16:03:43 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 16:40:00 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
+int		ft_strlen(char *str)
 {
-	unsigned int m;
+	int i;
 
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	m = 1;
-	while (m <= n)
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strrev(char *str)
+{
+	int		i;
+	int		len;
+	char	temp;
+
+	i = 0;
+	len = ft_strlen(str);
+	while (i < (len / 2))
 	{
-		m = m * 2;
-		if (m == n)
-			return (1);
+		temp = str[i];
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = temp;
+		i++;
 	}
-	return (0);
- }
-//{
-//	return (n > 0 && !(n & (n - 1)));
-//}
+	return (str);
+}

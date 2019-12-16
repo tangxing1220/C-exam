@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2.c                                    :+:      :+:    :+:   */
+/*   do_op.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 17:40:32 by xtang             #+#    #+#             */
-/*   Updated: 2019/12/16 17:38:31 by xtang            ###   ########.fr       */
+/*   Created: 2019/12/16 11:35:45 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 12:20:25 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_power_of_2(unsigned int n)
-{
-	unsigned int m;
+#ifndef DO_OP_H
+# define DO_OP_H
 
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	m = 1;
-	while (m <= n)
-	{
-		m = m * 2;
-		if (m == n)
-			return (1);
-	}
-	return (0);
- }
-//{
-//	return (n > 0 && !(n & (n - 1)));
-//}
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+
+#endif

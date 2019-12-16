@@ -1,16 +1,27 @@
-int	max(int* tab, unsigned int len)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   max.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/28 11:41:56 by xtang             #+#    #+#             */
+/*   Updated: 2019/11/28 13:16:19 by xtang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	max(int *tab, unsigned int len)
 {
 	int max;
 
 	max = 0;
-
 	if (len == 0)
 		max = 0;
-	while(len > 0)
+	while (len > 0)
 	{
-		if (tab[len] >= max)
-			max = tab[len];
-		len --;
+		if (tab[len - 1] >= max)
+			max = tab[len - 1];
+		len--;
 	}
 	return (max);
 }

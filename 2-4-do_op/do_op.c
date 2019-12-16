@@ -1,30 +1,42 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do_op.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/16 11:29:47 by xtang             #+#    #+#             */
+/*   Updated: 2019/12/16 12:19:29 by xtang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(int argc, char **argv)
+#include "do_op.h"
+
+int	main(int argc, char **argv)
 {
-	int i1;
-	int i2;
-	int re; 
+	int		num1;
+	int		num2;
+	int		result;
+	char	operator;
 
 	if (argc == 4)
 	{
-		re = 0;
-		i1 = atoi(argv[1]);
-	  	i2 = atoi(argv[3]);
-		if (argv[2][0] == '*')
-			re = i1 * i2;
-		if (argv[2][0] == '/')
-			re = i1 / i2;
-		if (argv[2][0] == '%')
-			re = i1 % i2;
-		if (argv[2][0] == '+')
-			re = i1 + i2;
-		if (argv[2][0] == '-')
-			re = i1 - i2;
-		printf("%d", re);
+		operator = argv[2][0];
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[3]);
+		if (operator == '+')
+			result = num1 + num2;
+		else if (operator == '-')
+			result = num1 - num2;
+		else if (operator == '*')
+			result = num1 * num2;
+		else if (operator == '/')
+			result = num1 / num2;
+		else
+			result = num1 % num2;
+		printf("%d\n", result);
 	}
-	printf("\n");
+	else
+		write(1, "\n", 1);
 	return (0);
 }
