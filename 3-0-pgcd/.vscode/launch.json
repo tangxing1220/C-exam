@@ -5,20 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-<<<<<<< HEAD
             "name": "(gdb) Launch",
-=======
-            "name": "(lldb) Launch",
->>>>>>> 1f62d4ce411f7879f231ddb9091894c6a1559daf
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/add_prime_sum",
-            "args": ["5"],
+            "program": "${workspaceFolder}/pgcd",
+            "args": ["42","10"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-<<<<<<< HEAD
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -27,9 +22,6 @@
                     "ignoreFailures": true
                 }
             ]
-=======
-            "MIMode": "lldb"
->>>>>>> 1f62d4ce411f7879f231ddb9091894c6a1559daf
         }
     ]
 }
