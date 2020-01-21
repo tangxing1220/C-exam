@@ -1,20 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int is_valid_prime(int nbr)
-{
-    int i;
-
-    i = 2;
-    while (i < nbr)
-    {
-        if (nbr % i == 0)
-            return (0);
-        i++;
-    }
-    return (1);
-}
-
 int main(int argc, char **argv)
 {
     unsigned int i;
@@ -31,22 +17,15 @@ int main(int argc, char **argv)
         i = 2;
         while (i <= nbr )
         {
-            if(is_valid_prime(i))
-            {
-                if ((nbr % i) == 0)
+                if (nbr % i == 0)
                 {
                     nbr = nbr / i;
-                    printf("%d",i);
+                    printf("%d", i);
                     if (nbr != 1)
                         printf("*");
                 }
                 else
-                {
-                    i++;
-                }                
-            }
-            else
-                i++;
+                    i++;            
         }
     }
     printf("\n");
