@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <limits.h>
 
 int		ft_int_digi(int value, int base)
 {
@@ -25,6 +26,28 @@ int		ft_int_digi(int value, int base)
 	return (i);
 }
 
+char	*ft_strdup(char *str)
+{
+	int i;
+	int len;
+	char *res;
+
+	i = 0;
+	len = 0;
+	while(str[len] != '\0')
+		len++;
+	res = (char *)malloc(sizeof(char) * len);
+	if (res == NULL)
+		return (NULL);
+	while(str[i] != '\0') 
+	{
+		res[i] = str[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
+}
+
 char	*ft_itoa_base(int value, int base)
 {
 	int		sign;
@@ -32,14 +55,9 @@ char	*ft_itoa_base(int value, int base)
 	char	*result;
 
 	if (value == 0)
-	{
-		result = (char *)malloc(sizeof(char) * 2);
-		if (result == NULL)
-			return ("Error");
-		result[0] = '0';
-		result[1] = '\0';
-		return (result);
-	}
+		return (ft_strdup("0"));
+	if (value == INT_MIN && base == 10)
+		return (ft_strdup("-2147483648"));
 	sign = 1;
 	if (value < 0 && base == 10)
 	{
