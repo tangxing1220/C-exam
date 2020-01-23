@@ -6,7 +6,7 @@
 /*   By: xtang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 15:29:57 by xtang             #+#    #+#             */
-/*   Updated: 2019/12/18 16:08:19 by xtang            ###   ########.fr       */
+/*   Updated: 2020/01/23 11:48:14 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 			{
 				if (argv[i][j] == ' ' || argv[i][j] == '\t')
 					flag = 0;
-				else if(argv[i][j] >= 'a' && argv[i][j] <= 'z')
+				else if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
 				{
 					argv[i][j] = argv[i][j] - 'a' + 'A';
 					flag = 1;
@@ -43,10 +43,10 @@ int	main(int argc, char **argv)
 					flag = 1;
 			}
 			else if (flag == 1)
-			{       
+			{
 				if (argv[i][j] == ' ' || argv[i][j] == '\t')
 					flag = 0;
-				else if(argv[i][j] >= 'A' && argv[i][j] <= 'Z')
+				else if (argv[i][j] >= 'A' && argv[i][j] <= 'Z')
 				{
 					argv[i][j] = argv[i][j] - 'A' + 'a';
 					flag = 1;
