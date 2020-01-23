@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_foreach_v2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xtang <xtang@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 12:20:47 by xtang             #+#    #+#             */
-/*   Updated: 2020/01/23 12:21:39 by xtang            ###   ########.fr       */
+/*   Created: 2020/01/23 12:05:19 by xtang             #+#    #+#             */
+/*   Updated: 2020/01/23 12:15:52 by xtang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list_v2.h"
 
-typedef struct	s_list
+void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-	struct s_list	*next;
-	void			*data;
-}				t_list;
+	t_list *list_ptr;
 
-#endif
+	list_ptr = begin_list;
+	while (list_ptr)
+	{
+		(*f)(list_ptr->data);
+		list_ptr = list_ptr->next;
+	}
+}
