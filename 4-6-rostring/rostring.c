@@ -19,9 +19,13 @@ int ft_wrlen(char *str, int start)
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-	if (str[start + i] != ' ' && str[start + i] != '\t')
-		i++;
+	while (str[start + i] != '\0')
+	{
+		if (str[start + i] == ' ' || str[start + i] == '\t')
+			break ;
+		else
+			i++;		
+	}
 	return (i);
 }
 
@@ -65,7 +69,7 @@ int	main(int argc, char **argv)
 	char *frwr;
 	int wrlen;
 
-	if(argc == 2)
+	if(argc > 1)
 	{
 		i = 0;
 		while (argv[1][i] != '\0')
@@ -81,14 +85,30 @@ int	main(int argc, char **argv)
 			write(1, "\n", 1);
 			return (0);
 		}
-		printf("%d\n", i);
 		wrlen = ft_wrlen(argv[1], i);
 		frwr = ft_frwrcp(argv[1], i, wrlen);
 		i = i + wrlen;
-		if (argv[i] != '\0')
+		if (argv[1][i] == '\0')
 		{
-			while (argv[1][i] == ' ' || argv[1][i] == '\t')
-				i++;			
+			ft_putstr(frwr);
+			ft_putchar('\n');
+			free(frwr);
+			return (0);
+		}
+		else
+		{
+			while (argv[1][i] == ' ' || argv[1][i] == '\t' || argv[1][i] == '\0')
+			{
+				if (argv[1][i] == '\0')
+					{
+						ft_putstr(frwr);
+						ft_putchar('\n');
+						free(frwr);
+						return (0);
+					}
+				else
+					i++;				
+			}		
 			while(argv[1][i] != '\0')
 			{	
 				if (argv[1][i] == ' ' ||  argv[1][i] == '\t')
@@ -106,7 +126,6 @@ int	main(int argc, char **argv)
 		}
 		ft_putstr(frwr);
 		free(frwr);
-		return (0);
 	}	
 	write(1, "\n", 1);
 	return (0);
