@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+#include "ft_list.h"
+
+int ft_list_size(t_list *begin_list)
+{
+    int cnt;
+    t_list  *next_ptr;
+
+    cnt = 0;
+    next_ptr = begin_list;
+    while(next_ptr)
+    {
+        cnt++;
+        next_ptr = next_ptr->next;
+    }
+    return (cnt);
+}
+=======
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -26,3 +44,4 @@ int	ft_list_size(t_list *begin_list)
 	}
 	return (listlen);
 }
+>>>>>>> 1f62d4ce411f7879f231ddb9091894c6a1559daf

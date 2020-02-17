@@ -9,7 +9,11 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/ft_itoa_base",
+<<<<<<< HEAD
             "args": [],
+=======
+            "args": ["11", "16"],
+>>>>>>> 2e5e7cf3697d0ea27f92e4075e1e6333028f92dc
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

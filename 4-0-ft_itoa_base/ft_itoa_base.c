@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+<<<<<<< HEAD
+=======
+#include <limits.h>
+>>>>>>> 2e5e7cf3697d0ea27f92e4075e1e6333028f92dc
 
 int		ft_int_digi(int value, int base)
 {
@@ -25,6 +29,31 @@ int		ft_int_digi(int value, int base)
 	return (i);
 }
 
+<<<<<<< HEAD
+=======
+char	*ft_strdup(char *str)
+{
+	int i;
+	int len;
+	char *res;
+
+	i = 0;
+	len = 0;
+	while(str[len] != '\0')
+		len++;
+	res = (char *)malloc(sizeof(char) * len);
+	if (res == NULL)
+		return (NULL);
+	while(str[i] != '\0') 
+	{
+		res[i] = str[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
+}
+
+>>>>>>> 2e5e7cf3697d0ea27f92e4075e1e6333028f92dc
 char	*ft_itoa_base(int value, int base)
 {
 	int		sign;
@@ -32,6 +61,7 @@ char	*ft_itoa_base(int value, int base)
 	char	*result;
 
 	if (value == 0)
+<<<<<<< HEAD
 	{
 		result = (char *)malloc(sizeof(char) * 2);
 		if (result == NULL)
@@ -40,6 +70,11 @@ char	*ft_itoa_base(int value, int base)
 		result[1] = '\0';
 		return (result);
 	}
+=======
+		return (ft_strdup("0"));
+	if (value == INT_MIN && base == 10)
+		return (ft_strdup("-2147483648"));
+>>>>>>> 2e5e7cf3697d0ea27f92e4075e1e6333028f92dc
 	sign = 1;
 	if (value < 0 && base == 10)
 	{

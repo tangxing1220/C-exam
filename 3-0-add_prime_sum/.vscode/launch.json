@@ -5,7 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
+<<<<<<< HEAD
+            "name": "(gdb) Launch",
+=======
             "name": "(lldb) Launch",
+>>>>>>> 1f62d4ce411f7879f231ddb9091894c6a1559daf
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/add_prime_sum",
@@ -14,7 +18,18 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
+<<<<<<< HEAD
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+=======
             "MIMode": "lldb"
+>>>>>>> 1f62d4ce411f7879f231ddb9091894c6a1559daf
         }
     ]
 }
