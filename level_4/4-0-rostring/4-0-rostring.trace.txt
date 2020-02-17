@@ -1,0 +1,29 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+c3r2p3.hive.fi
+Darwin 18.7.0 x86_64
+$> date
+Tue Feb 11 15:25:59 EET 2020
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2020/c-exam-alone-in-the-dark-beginner/exam_20200211/xtang
+= Collected files ==========================================
+$> ls -lAR /tmp/tmp0Oc0p4/user
+ 
+= rostring =====================================================================
+Nothing turned in
+Grade: 0
+
+= Final grade: 0 ===============================================================
